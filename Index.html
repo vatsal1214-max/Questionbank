@@ -1,0 +1,118 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>IWS Interview Cards</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: one narrow column of flip-style cards, sticky filter bar on top.
+   Palette: ink, deep teal accent, amber for tricks, green for real examples. */
+:root {
+  --bg: #f2f5f7;
+  --surface: #ffffff;
+  --ink: #14232e;
+  --muted: #566672;
+  --line: #d9e1e6;
+  --accent: #0e7c86;
+  --accent-soft: #dcf0f2;
+  --trick: #8a4a06;
+  --trick-bg: #fff3dc;
+  --ex: #25673a;
+  --ex-bg: #e4f3e9;
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]){
+    --bg:#0d171d;--surface:#15222a;--ink:#e6eef2;--muted:#93a4af;--line:#263741;
+    --accent:#4fc3cc;--accent-soft:#143339;--trick:#f5b45a;--trick-bg:#2c2210;
+    --ex:#7fd39a;--ex-bg:#12281b;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{--bg:#0d171d;--surface:#15222a;--ink:#e6eef2;--muted:#93a4af;--line:#263741;--accent:#4fc3cc;--accent-soft:#143339;--trick:#f5b45a;--trick-bg:#2c2210;--ex:#7fd39a;--ex-bg:#12281b;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto}header{padding-block:28px 16px}.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+h1{font-family:var(--font-head);font-size:clamp(28px,6vw,40px);line-height:1.1;margin:0 0 10px;text-wrap:balance}.lead{color:var(--muted);margin:0;max-width:60ch}.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:13px}.legend span{padding:3px 10px;border-radius:999px}.l-ans{background:var(--accent-soft);color:var(--accent)}.l-trick{background:var(--trick-bg);color:var(--trick)}.l-ex{background:var(--ex-bg);color:var(--ex)}.l-f{border:1px dashed var(--line);color:var(--muted)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}.prog{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:10px}.track{flex:1;height:6px;background:var(--line);border-radius:99px;overflow:hidden}.fill{height:100%;width:0;background:var(--accent);transition:width .25s}.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:14px;padding:6px 12px;border-radius:999px;cursor:pointer}.tab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.tools input[type=search]{flex:1 1 180px;min-width:0;font:inherit;font-size:15px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}.btn{font:inherit;font-size:13px;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chk{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{display:flex;flex-direction:column;gap:10px;padding-top:16px}.card{background:var(--surface);border:1px solid var(--line);border-radius:12px}.card.done{opacity:.6}summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;padding:14px 16px}summary::-webkit-details-marker{display:none}.emo{font-size:24px;line-height:1.2;flex:none}.qwrap{min-width:0;flex:1}.q{font-family:var(--font-head);font-weight:500;font-size:17px;line-height:1.3;margin:0}.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;font-size:12px;color:var(--muted)}.badge{background:var(--accent-soft);color:var(--accent);padding:1px 8px;border-radius:99px;font-weight:600}.tick{flex:none;color:var(--accent);font-size:18px}.chev{flex:none;color:var(--muted);transition:transform .15s}details[open] .chev{transform:rotate(90deg)}.body{padding:0 16px 16px;display:flex;flex-direction:column;gap:10px}.box{border-radius:10px;padding:10px 12px;font-size:15px;min-width:0;overflow-wrap:anywhere}.box b.h{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}.a{background:var(--accent-soft)}.a b.h{color:var(--accent)}.t{background:var(--trick-bg);color:var(--ink)}.t b.h{color:var(--trick)}.x{background:var(--ex-bg)}.x b.h{color:var(--ex)}.f{border:1px dashed var(--line);background:transparent}.f b.h{color:var(--muted)}code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:color-mix(in srgb,var(--ink) 10%,transparent);padding:1px 5px;border-radius:5px}.know{align-self:flex-start}.empty{text-align:center;color:var(--muted);padding:32px 0}footer{margin-top:28px;font-size:13px;color:var(--muted)}@media(prefers-reduced-motion:reduce){.fill,.chev{transition:none}}
+</style>
+
+<div class="wrap">
+<header><p class="eyebrow">IWS · .NET Full Stack (AI-Augmented)</p><h1>Interview cards</h1><p class="lead">Written for a senior developer: answers lead with trade-offs and production experience. Say yours out loud first, then open the card. Each one has a trick to remember it, a real-life picture and the follow-up they are likely to ask next.</p><div class="legend"><span class="l-ans">✅ Answer</span><span class="l-trick">🧠 Trick</span><span class="l-ex">🌍 Real example</span><span class="l-f">🎯 Follow-up</span></div></header>
+<div class="bar"><div class="prog"><span id="progText">0 / 0 learned</span><div class="track"><div class="fill" id="fill"></div></div></div><div class="tabs" id="tabs"></div><div class="tools"><input type="search" id="search" placeholder="Search: jwt, index, hooks…" aria-label="Search questions"><button class="btn" id="shuffle" type="button">🔀 Shuffle</button><button class="btn" id="collapse" type="button">Collapse all</button><label class="chk"><input type="checkbox" id="hideDone"> Hide learned</label></div></div>
+<main id="list"></main><footer>Cards marked <span class="badge">Extra</span> are added on top of your original list. Learned marks stay in this browser only.</footer>
+</div>
+
+<script>
+var D=[
+{c:"net",e:"💉",q:"What are the DI lifetimes in ASP.NET Core?",a:"<b>Transient</b>: a new instance every time it is requested. <b>Scoped</b>: one instance per request. <b>Singleton</b>: one instance for the whole app. DbContext is Scoped; stateless helpers and caches are Singleton.",t:"Time ladder: Transient = seconds, Scoped = one request, Singleton = forever.",x:"🥤 Transient = paper cup, use once and bin it. 🏨 Scoped = your hotel room for one stay. 🏢 Singleton = the hotel building, shared by everyone."},
+{c:"net",n:1,e:"⛓️",q:"What is a captive dependency?",a:"A long-lived service holding a short-lived one, like a Singleton that takes a Scoped service. The scoped one then lives far too long. Fix it by changing the lifetime or injecting <code>IServiceScopeFactory</code> and creating a scope.",t:"Long-lived must never hold short-lived.",x:"🪪 A permanent employee keeping a one-day visitor badge forever."},
+{c:"net",n:1,e:"🧩",q:"Why use dependency injection at all?",a:"The class asks for what it needs instead of creating it with <code>new</code>. Code becomes loosely coupled, easy to test and easy to change.",t:"Ask, don't build.",x:"🍳 A chef gets ingredients delivered instead of growing them."},
+{c:"net",n:1,e:"🔌",q:"Constructor injection vs service locator?",a:"Constructor injection makes dependencies explicit and required. A service locator hides dependencies and is harder to test.",t:"Constructor = contract. Locator = hidden surprise.",x:"📜 Constructor is a job description listing your tools."},
+{c:"net",n:1,e:"🔑",q:"Two implementations of one interface. How do you pick?",a:"Register keyed services with <code>AddKeyedScoped</code> in .NET 8+, or inject <code>IEnumerable&lt;T&gt;</code>. Without a key, the last registration wins.",t:"Same plug, different keys.",x:"💳 Stripe and PayPal implementations selected by payment method."},
+{c:"net",e:"🚦",q:"What is middleware and why does order matter?",a:"A request-pipeline component that can handle or pass a request onward. Each middleware runs in registration order, so exception handling goes first and endpoints last.",t:"Exception → HTTPS → Static files → Routing → AuthN → AuthZ → Endpoints.",x:"🛂 Airport check-in, passport, security and gate must happen in order."},
+{c:"net",e:"📡",q:"Which HTTP status codes do you use?",a:"200 OK, 201 Created, 204 No Content, 400 bad input, 401 unauthenticated, 403 not allowed, 404 not found, 409 conflict, 500 server error.",t:"2xx good. 4xx your fault. 5xx our fault.",x:"🕺 No ID = 401. Valid ID but not on the list = 403."},
+{c:"net",e:"⏳",q:"How does async/await work?",a:"<code>await</code> frees the thread while waiting on I/O. The compiler uses a state machine. Avoid blocking with <code>.Result</code> or <code>.Wait()</code>, and pass CancellationToken.",t:"await serves other tables. .Result makes the waiter stare at the kitchen.",x:"☕ Many users can share few threads instead of waiting idle."},
+{c:"net",n:1,e:"🏁",q:"Task.WhenAll vs awaiting one by one?",a:"Awaiting in sequence is slower for independent I/O. <code>Task.WhenAll</code> starts independent calls together.",t:"Independent = together. Dependent = in a line.",x:"📞 Three 3-second calls: 9 seconds sequence, about 3 seconds together."},
+{c:"net",e:"🗄️",q:"How does EF Core keep queries fast?",a:"EF Core translates LINQ to SQL and tracks changes. Use <code>AsNoTracking</code>, project needed columns, avoid N+1, page results and inspect the generated SQL.",t:"Tracking for writes. No tracking for reads.",x:"📹 Tracking is CCTV; useful for edits, wasteful for a menu read."},
+{c:"net",e:"🔁",q:"What is the N+1 problem?",a:"One query loads a list, then another query runs per item. Fix it with <code>Include</code>, projection or split queries.",t:"1 + N = bad. JOIN it.",x:"🛒 Walking back 1,000 times to ask each customer's name."},
+{c:"net",n:1,e:"🎯",q:"Include vs Select projection?",a:"<code>Include</code> loads full related entities. <code>Select</code> fetches only fields needed by a DTO and is usually lighter for lists.",t:"Select what you show.",x:"🍕 Include the whole menu; select only the pizza."},
+{c:"net",e:"🧳",q:"How do EF Core migrations work?",a:"Migrations are versioned schema changes. Add them with <code>dotnet ef migrations add</code>, review generated SQL and apply explicitly in production.",t:"Migrations are Git for database schema.",x:"➕ Add OrderStatus, migrate it consistently to every environment."},
+{c:"net",e:"🔍",q:"IQueryable vs IEnumerable?",a:"IQueryable composes SQL and lets the database filter. IEnumerable executes and filters in memory.",t:"Queryable = query in DB. Enumerable = everything in memory.",x:"📦 Bring the warehouse home versus request 10 boxes."},
+{c:"net",e:"🪪",q:"Authentication vs authorization?",a:"Authentication proves who you are; authorization decides what you may do. Use authentication before authorization middleware.",t:"N = Name. Z = Zones.",x:"✈️ Passport proves identity; boarding pass grants gate access."},
+{c:"net",e:"🎟️",q:"How does JWT work?",a:"A JWT contains header, payload claims and signature. JwtBearer validates signature, issuer, audience and expiry. It is signed, not encrypted.",t:"Header.Payload.Signature. Readable by anyone, forgeable by nobody.",x:"🎫 Staff can verify a wristband without calling the box office."},
+{c:"net",n:1,e:"♻️",q:"Why use refresh tokens?",a:"Short-lived access tokens limit leak damage. A safely stored, rotated refresh token obtains a new access token without logging in again.",t:"Day pass plus membership card.",x:"🏋️ Renew a short pass using membership credentials."},
+{c:"net",e:"🧱",q:"Explain SOLID.",a:"Single responsibility, Open/closed, Liskov substitution, Interface segregation and Dependency inversion.",t:"S-O-L-I-D = small, extendable, substitutable, segregated, inverted.",x:"🔧 A drill drills; a socket accepts many implementations."},
+{c:"net",e:"🚨",q:"How do you handle exceptions?",a:"Catch only where you can recover. Use a global handler for unhandled errors and rethrow with <code>throw;</code> to preserve the stack trace.",t:"One fire alarm, not a bucket in every room.",x:"🔥 Catch, log and return consistent JSON centrally."},
+{c:"react",e:"📦",q:"Props vs state?",a:"Props are read-only inputs from a parent. State is component-owned data that triggers re-renders.",t:"Props = parcel received. State = your backpack.",x:"🛍️ Price is a prop; cart count is state."},
+{c:"react",e:"🔢",q:"How does useState work?",a:"It returns a value and setter. Use the functional setter when the new value depends on the old value.",t:"New depends on old? Use <code>setCount(c =&gt; c+1)</code>.",x:"❤️ Fast repeated likes stay correct."},
+{c:"react",e:"⚡",q:"How does useEffect work?",a:"It runs side effects after render. <code>[]</code> runs once, dependencies rerun when values change, and a cleanup function removes subscriptions or requests.",t:"[] once. [x] when x changes.",x:"🔎 Fetch user details when userId changes."},
+{c:"react",n:1,e:"📌",q:"What is useRef for?",a:"Access DOM nodes or keep mutable values between renders without causing a re-render.",t:"Ref = sticky note. State = billboard.",x:"⌨️ Focus an input or retain a timer ID."},
+{c:"react",e:"🎛️",q:"Controlled vs uncontrolled components?",a:"Controlled inputs are driven by React state. Uncontrolled inputs retain DOM state and are read through a ref.",t:"Controlled = React remote. Uncontrolled = DOM holds value.",x:"✍️ Validation uses controlled inputs; file inputs can be uncontrolled."},
+{c:"react",e:"📏",q:"What are the rules of hooks?",a:"Call hooks only at the top level and only in React components or custom hooks. Never change hook order between renders.",t:"Top level, always, same order.",x:"🎼 React matches hooks by their stable positions."},
+{c:"react",n:1,e:"🔑",q:"Why does a list need a key?",a:"Keys let React match items across renders. Use stable unique IDs, not array indexes for reorderable lists.",t:"Key = name tag. Index = changing seat number.",x:"📋 Wrong index keys can attach state to deleted or moved rows."},
+{c:"react",e:"🔒",q:"What is a closure in React?",a:"A function retains variables from its creation scope. An effect or handler can capture stale state if dependencies are wrong.",t:"Closure = an old photo of variables.",x:"⏱️ An interval captures the first render's count."},
+{c:"react",e:"🤝",q:"Promises vs async/await?",a:"async/await is syntax over promises. An async function returns a promise; use try/catch for errors and Promise.all for independent work.",t:"Promise = ticket. await = wait for number.",x:"🧑‍🍳 Load independent user and order APIs together."},
+{c:"react",e:"🧬",q:"TypeScript: interface vs type?",a:"Interfaces describe object shapes and can merge or extend. Types can express unions, intersections and tuples.",t:"Interface = object blueprint. Type = unions and more.",x:"🚦 Status as a string union."},
+{c:"react",e:"❓",q:"any vs unknown?",a:"<code>any</code> disables checking. <code>unknown</code> requires runtime narrowing before use.",t:"any = blindfold off. unknown = locked box.",x:"🌐 Validate API JSON before accessing fields."},
+{c:"sql",e:"🔗",q:"Explain joins.",a:"INNER returns matches. LEFT keeps every left row. RIGHT keeps every right row. FULL keeps all rows from both sides.",t:"Inner overlap. Left whole left circle.",x:"🧾 All customers, including customers with no orders."},
+{c:"sql",e:"📇",q:"What is an index?",a:"An index speeds lookup using a separate B-tree structure. It costs storage and slows writes.",t:"Index = book index.",x:"🔎 Find a row among millions without scanning every row."},
+{c:"sql",e:"🗃️",q:"Clustered vs non-clustered index?",a:"A clustered index defines physical row order; only one is possible. Non-clustered indexes are separate structures; many are possible.",t:"Clustered = book page order. Non-clustered = back-of-book index.",x:"📖 Rows ordered by Id; lookup structure for Email."},
+{c:"sql",e:"📜",q:"What is a stored procedure?",a:"Saved SQL logic in the database. Useful for complex set-based work or controlled access, but application logic becomes split across layers.",t:"Recipe kept in the kitchen.",x:"📈 One call replaces many database round trips."},
+{c:"sql",e:"🔐",q:"What are ACID properties?",a:"Atomicity, Consistency, Isolation and Durability guarantee reliable transactions.",t:"All or nothing. Valid state. Isolated. Durable.",x:"🏧 Bank transfers complete both sides or neither side."},
+{c:"sql",e:"🐢",q:"How do you optimize a slow query?",a:"Read the execution plan, use appropriate indexes, avoid SELECT *, use sargable predicates, page results and replace expensive patterns.",t:"Plan first, guess never.",x:"🩺 Diagnose before prescribing."},
+{c:"sql",e:"🔍",q:"WHERE vs HAVING?",a:"WHERE filters rows before grouping. HAVING filters groups after aggregation.",t:"WHERE before. HAVING after.",x:"🛍️ HAVING COUNT(*) > 5 finds frequent buyers."},
+{c:"ai",e:"🤖",q:"How do you use AI while coding?",a:"For scaffolding, tests, refactors and first drafts, while I retain design ownership and review every change.",t:"AI drives typing; you drive thinking.",x:"🧑‍✈️ Autopilot assists, but the pilot chooses the destination."},
+{c:"ai",e:"🕵️",q:"How do you verify AI-generated code?",a:"Read it, compile it, run edge-case tests and check APIs, security and repository conventions.",t:"Read, Run, Test, Secure.",x:"✍️ Review AI code like a colleague's pull request."},
+{c:"ai",e:"🔌",q:"How would you integrate an AI API?",a:"Call the provider only from the backend. Hide keys, add timeouts, retries, rate-limit handling, structured output and a fallback.",t:"Key hidden. Interface. Timeouts. Structured output.",x:"🏪 Customer talks to your API; your API talks to the provider."},
+{c:"proj",e:"🚔",q:"Tell me about your most significant project.",a:"I worked on a mission-critical public-safety records platform used by 50+ US agencies. I led a team of 4–6 and helped reduce production bugs by 35–40%.",t:"Situation, Task, Action, Result.",x:"🎯 Lead with the agency, data and bug-reduction numbers."},
+{c:"proj",e:"💬",q:"Tell me about AutoEnquiry.",a:"I built an AI customer-support system with .NET and React and deployed it to Azure. Explain the flow from React through .NET to the AI provider and back.",t:"Problem → flow → improvement.",x:"🛎️ Customer asks; API retrieves context; AI answers; UI displays it."}
+];
+
+var S=[
+{s:["D","I","l","i","f","e","t","i","m","e","s"]},
+];
+
+var CATS=[["all","All"],["net",".NET / C#"],["react","React / TS"],["sql","SQL"],["ai","AI + Dev"],["proj","Projects"]];
+var NAMES={net:".NET / C#",react:"React / TS",sql:"SQL",ai:"AI + Dev",proj:"Projects"};
+var KEY="iws-learned-v1",learned={};
+try{learned=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){learned={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(learned))}catch(e){}}
+D.forEach(function(d,i){d.id=d.c+"-"+i});
+var state={cat:"all",q:"",hide:false,order:D.map(function(d,i){return i})};
+var $=function(id){return document.getElementById(id)};
+function renderTabs(){ $("tabs").innerHTML=CATS.map(function(c){var n=c[0]==="all"?D.length:D.filter(function(d){return d.c===c[0]}).length;return '<button class="tab" type="button" data-cat="'+c[0]+'" aria-pressed="'+(state.cat===c[0])+'">'+c[1]+" · "+n+"</button>"}).join("")}
+function progress(){var done=D.filter(function(d){return learned[d.id]}).length;$("progText").textContent=done+" / "+D.length+" learned";$("fill").style.width=(D.length?(done/D.length)*100:0)+"%"}
+function cardHtml(d){var done=!!learned[d.id];return '<article class="card'+(done?' done':'')+'"><details><summary><span class="emo">'+d.e+'</span><span class="qwrap"><p class="q">'+d.q+'</p><span class="meta"><span>'+NAMES[d.c]+'</span>'+((d.n)?'<span class="badge">Extra</span>':"")+'</span></span>'+((done)?'<span class="tick" aria-label="learned">✓</span>':"")+'<span class="chev">›</span></summary><div class="body"><div class="box a"><b class="h">✅ Answer</b>'+d.a+'</div><div class="box t"><b class="h">🧠 Trick</b>'+d.t+'</div><div class="box x"><b class="h">🌍 Real example</b>'+d.x+'</div>'+((d.f)?'<div class="box f"><b class="h">🎯 Likely follow-up</b>'+d.f+'</div>':"")+'<button class="btn know" type="button" data-id="'+d.id+'">'+(done?"Mark as not learned":"✓ I know this")+'</button></div></details></article>'}
+function render(){var q=state.q.trim().toLowerCase();var items=state.order.map(function(i){return D[i]}).filter(function(d){if(state.cat!=="all"&&d.c!==state.cat)return false;if(state.hide&&learned[d.id])return false;if(q){var hay=(d.q+" "+d.a+" "+d.t+" "+d.x).replace(/<[^>]+>/g," ").toLower==();if(hay.indexOf(q)===-1)return false}return true});$("list").innerHTML=items.length?items.map(cardHtml).join(""):'<p class="empty">Nothing here. Try another tab or clear the search. 🔎</p>';renderTabs();progress()}
+$("tabs").addEventListener("click",function(e){var b=e.target.closest(".tab");if(!b)return;state.cat=b.getAttribute("data-cat");render()});
+$("search").addEventListener("input",function(e){state.q=e.target.value;render()});
+$("hideDone").addEventListener("change",function(e){state.hide=e.target.checked;render()});
+$("collapse").addEventListener("click",function(){document.querySelectorAll("#list details[open]").forEach(function(d){d.open=false})});
+$("shuffle").addEventListener("click",function(){var a=state.order.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}state.order=a;render()});
+$("list").addEventListener("click",function(e){var b=e.target.closest(".know");if(!b)return;var id=b.getAttribute("data-id");if(learned[id])delete learned[id];else learned[id]=1;save();render()});
+render();
+</script>
+</body></html>
